@@ -1,7 +1,9 @@
+from os import system
 from bs4 import BeautifulSoup
 from bs4 import PageElement
 import requests
 import os
+import time
 
 THIS_FOLDER = os.path.dirname(os.path.abspath(__file__))
 MY_FILE = os.path.join(THIS_FOLDER, 'links.txt')
@@ -60,3 +62,5 @@ while True:
     print(str(count) + " new objects found.")
     iterationCounter += 1
     print("HemnetWatcher has ran " + str(iterationCounter) + " times since last restart.")
+
+    time.sleep(10)
