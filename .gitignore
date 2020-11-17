@@ -1,1 +1,5 @@
+#resources and temp files
 *.txt
+
+#pycache
+/__*

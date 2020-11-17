@@ -1,3 +1,4 @@
+from informer import Informer
 from os import system
 from bs4 import BeautifulSoup
 from bs4 import PageElement
@@ -7,6 +8,7 @@ import time
 
 THIS_FOLDER = os.path.dirname(os.path.abspath(__file__))
 MY_FILE = os.path.join(THIS_FOLDER, 'links.txt')
+info = Informer
 
 iterationCounter = 0
 
@@ -62,5 +64,10 @@ while True:
     print(str(count) + " new objects found.")
     iterationCounter += 1
     print("HemnetWatcher has ran " + str(iterationCounter) + " times since last restart.")
+
+    if results:
+        if mock_omrade == "":
+            mock_omrade = " "
+        info.mail(info, results, mock_kommun, mock_omrade)
 
     time.sleep(10)
