@@ -6,6 +6,12 @@ import requests
 import os
 import time
 
+# a = "osterakers"
+# b = "akersberga"
+
+# fpc = FirstPageCrawl(a, b)
+
+
 class FirstPageCrawl:
     def __init__(self, kommun, omrade):
         self.__kommun = kommun
@@ -28,7 +34,7 @@ class FirstPageCrawl:
         if not kommun: #change from mock to real value
             omrade = "" 
         URL_trail = "?by=creation&housing_form_groups[]=apartments&order=desc&preferred_sorting=true" #queries for "nyast först"
-        query_URL = base_URL+kommun+omrade+URL_trail
+        query_URL = base_URL+kommun+"-kommun/"+omrade+URL_trail
         return query_URL
 
     def initializeCrawl(self):
